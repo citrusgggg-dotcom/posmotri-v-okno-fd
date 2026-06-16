@@ -160,11 +160,6 @@ html {
   flex-grow: 0;
 }
 
-.more-button {
-  margin-top: 30px;
-  width: 100%;
-}
-
 input {
   border: none; /* Полностью убираем все границы */
   border-top: 1px solid rgba(255, 255, 255, 1); /* Верхняя граница */
@@ -257,6 +252,7 @@ input:focus {
 }
 .more-button {
   width: 399px;
+  margin-top: 30px;
   height: 34px;
   /* карточки */
 }
