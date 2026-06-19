@@ -37,9 +37,7 @@ html {
   gap: 30px;
   padding-left: 30px;
 }
-.content__list-container {
-  position: relative;
-}
+
 .result__video-container {
   position: relative;
 }
@@ -127,6 +125,7 @@ html {
   height: 298px;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 }
 
 .content__video-card {
@@ -175,7 +174,6 @@ html {
   object-fit: cover;
 
   width: 711px;
-  height: 386px;
 }
 .content__video-card-description-container {
   flex-grow: 0;
