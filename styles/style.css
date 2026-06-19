@@ -54,6 +54,11 @@ html {
   line-height: 1.2;
   color: #fff;
   text-transform: uppercase;
+  line-height: 94%;
+  height: 210px; /*под вопросом*/
+}
+.content__details {
+  padding-bottom: 133px;
 }
 
 .content__accent {
@@ -93,8 +98,7 @@ html {
   width: 100%;
 }
 .content__list-item {
-  padding-top: 30px;
-  gap: 30px;
+  padding-bottom: 30px; /**/
 }
 
 .content__list {
