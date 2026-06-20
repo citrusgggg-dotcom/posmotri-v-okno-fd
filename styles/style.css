@@ -85,10 +85,13 @@ html {
 }
 .search-form__fieldset-title {
   font-family: "Fira Sans Condensed", Arial, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 100%;
   color: #fff;
+  font-style: normal;
+  letter-spacing: 0;
+  padding-bottom: 5px;
 }
 .search-form__fieldset {
   border: none;
@@ -252,14 +255,17 @@ input:focus {
   font-family: Fira Sans Condensed;
   font-weight: 700;
   font-style: bold;
-  size: 18px;
+  font-size: 18px;
+  line-height: 100%;
   background-color: transparent;
   cursor: pointer;
+  letter-spacing: 0%;
 }
 .search-form__submit-button {
   width: 194px;
   height: 34px;
   margin-top: 22px;
+
   /* видео */
 }
 .search-form__submit-button:active {
