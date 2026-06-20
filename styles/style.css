@@ -53,10 +53,10 @@ html {
 }
 
 .result {
-  padding-top: 211px;
+  padding-top: 203px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 203px;
+  padding-bottom: 211px;
   justify-content: flex-start;
   align-items: center;
   flex: 1;
@@ -110,6 +110,8 @@ html {
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
+  min-height: 10px;
+  padding-top: 16px;
 }
 .content__list-item {
   padding-bottom: 30px; /**/
@@ -169,7 +171,6 @@ html {
 }
 
 .result__video-container video {
-  margin-bottom: 16px;
   object-fit: cover;
 
   width: 711px;
@@ -255,6 +256,7 @@ input:focus {
 .search-form__submit-button {
   width: 194px;
   height: 34px;
+  margin-top: 10px;
   /* видео */
 }
 .search-form__submit-button:active {
