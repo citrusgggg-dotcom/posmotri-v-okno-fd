@@ -53,10 +53,10 @@ html {
 }
 
 .result {
-  padding-top: 203px;
+  padding-top: 211px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 211px;
+  padding-bottom: 203px;
   justify-content: flex-start;
   align-items: center;
   flex: 1;
@@ -72,6 +72,7 @@ html {
   height: 210px; /*под вопросом*/
 }
 .content__details {
+  padding-top: 133px;
   padding-bottom: 133px;
 }
 
@@ -127,6 +128,8 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+
+  margin-top: 26px;
 }
 
 .content__video-card {
@@ -256,7 +259,7 @@ input:focus {
 .search-form__submit-button {
   width: 194px;
   height: 34px;
-  margin-top: 10px;
+  margin-top: 22px;
   /* видео */
 }
 .search-form__submit-button:active {
