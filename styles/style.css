@@ -18,7 +18,6 @@ html {
   white-space: nowrap;
 }
 .preloader {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -162,7 +161,7 @@ html {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  size: 18px;
+  font-size: 18px;
 }
 
 .content__video-card-title {
@@ -261,7 +260,6 @@ input:focus {
   line-height: 100%;
   background-color: transparent;
   cursor: pointer;
-  letter-spacing: 0%;
 }
 .search-form__submit-button {
   width: 194px;
