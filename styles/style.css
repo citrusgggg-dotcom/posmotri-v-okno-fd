@@ -7,6 +7,37 @@
 html {
   block-size: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(217 217 217 / 10%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+}
 
 .visually-hidden {
   position: absolute;
@@ -46,7 +77,7 @@ html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   gap: 30px;
   padding-left: 30px;
 }
@@ -68,7 +99,6 @@ html {
   color: #fff;
   text-transform: uppercase;
   line-height: 94%;
-  height: 210px; /*под вопросом*/
 }
 .content__details {
   padding-top: 133px;
@@ -81,6 +111,20 @@ html {
 .content__card-link {
   text-decoration: none;
   color: #fff;
+  display: block;
+}
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+.content__card-link:hover {
+  text-decoration: underline;
+}
+.content__card-link:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 1);
+}
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
 }
 .search-form__fieldset-title {
   font-family: "Fira Sans Condensed", Arial, sans-serif;
@@ -91,9 +135,6 @@ html {
   font-style: normal;
   letter-spacing: 0;
   padding-bottom: 5px;
-}
-.search-form__fieldset {
-  border: none;
 }
 
 .search-form__label {
@@ -115,36 +156,37 @@ html {
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
-  min-height: 10px;
+
   padding-top: 16px;
 }
-.content__list-item {
-  padding-bottom: 30px; /**/
-}
+/*.content__list-item {
+  padding-bottom: 30px;
+}*/
 
 .content__list {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
 .content__list-container {
-  width: 399px;
+  max-width: 100%;
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
-
   margin-top: 26px;
 }
 
 .content__video-card {
   display: flex;
+
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
 }
-.content__video-card:active {
+/*.content__video-card:active {
   background: rgba(84, 80, 80, 1);
-}
+}*/
 .content__video-card:hover {
   text-decoration: underline;
 }
@@ -155,6 +197,8 @@ html {
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 .content__video-card-description {
   line-height: 16.2px;
@@ -162,6 +206,10 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 .content__video-card-title {
@@ -178,8 +226,6 @@ html {
 }
 
 .result__video-container video {
-  object-fit: cover;
-
   width: 711px;
   height: 386px;
 }
@@ -187,8 +233,8 @@ html {
   flex-grow: 0;
 }
 
-input {
-  border: none; /* Полностью убираем все границы */
+.search-form__fieldset {
+  border: none !important; /* Полностью убираем все границы */
   border-top: 1px solid rgba(255, 255, 255, 1); /* Верхняя граница */
   border-bottom: 1px solid rgba(255, 255, 255, 1);
   width: 225px;
@@ -197,10 +243,9 @@ input {
   color: #fff;
   appearance: none;
   outline: none;
-  cursor: pointer;
+  cursor: text;
 }
-
-input:focus {
+.search-form__fieldset:focus {
   border-color: rgba(255, 255, 255, 0.7);
 }
 .search-form__label:has(:focus-visible) {
@@ -220,8 +265,17 @@ input:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
   width: 225px !important;
   height: 27px !important;
+  font-family:
+    "Fira Sans Condensed" Arial,
+    sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
 
-  color: #fff !important;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  color: #ffffff !important;
   background-color: transparent !important;
   appearance: none !important;
   outline: none !important;
@@ -253,12 +307,19 @@ input:focus {
 .button {
   border: 1px solid rgba(255, 255, 255, 1);
   color: rgba(255, 255, 255, 1);
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-weight: 700;
   font-style: bold;
   font-size: 18px;
   line-height: 100%;
   background-color: transparent;
+  cursor: pointer;
+}
+.button:active {
+  background: rgba(84, 80, 80, 1);
+}
+.button:hover {
+  text-decoration: underline;
   cursor: pointer;
 }
 .search-form__submit-button {
@@ -282,9 +343,9 @@ input:focus {
 }
 .more-button {
   width: 399px;
-  margin-top: 30px;
+
   height: 34px;
-  /* карточки */
+  /* показать еще */
 }
 .more-button:active {
   background: rgba(84, 80, 80, 1);
@@ -297,35 +358,4 @@ input:focus {
 }
 .more-button:focus-visible {
   outline: 1px solid rgba(255, 255, 255, 1);
-}
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-/* Кастомный скроллбар */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #d9d9d9;
 }
