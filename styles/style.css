@@ -205,7 +205,7 @@ ol {
 }
 .content__video-card-description {
   line-height: 16.2px;
-  white-space: nowrap;
+
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 18px;
@@ -215,7 +215,6 @@ ol {
   line-clamp: 3;
 
   width: 196px;
-  height: 17px;
 }
 
 .content__video-card-title {
@@ -266,11 +265,11 @@ ol {
   background-color: #1b1919;
 }
 .search-form__textfield {
-  border: none !important;
-  border-top: 1px solid rgba(255, 255, 255, 1) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
-  width: 225px !important;
-  height: 27px !important;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
+  width: 225px;
+  height: 27px;
   font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -279,11 +278,11 @@ ol {
   line-height: 100%;
   letter-spacing: 0%;
 
-  color: #ffffff !important;
-  background-color: transparent !important;
-  appearance: none !important;
-  outline: none !important;
-  box-sizing: border-box !important;
+  color: #ffffff;
+  background-color: transparent;
+  appearance: none;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .search-form__pseudo-checkbox {
@@ -338,7 +337,7 @@ ol {
 }
 
 .more-button {
-  width: 399px;
+  width: 100%;
   margin-top: 30px;
   height: 34px;
   /* показать еще */
